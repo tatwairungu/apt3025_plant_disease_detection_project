@@ -24,3 +24,6 @@ bell_pepper_healthy/
 # System files
 .DS_Store
 Thumbs.db
+
+# Project documentation
+Plant_Disease_Project_Plan.md
