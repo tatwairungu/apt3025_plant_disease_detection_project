@@ -289,4 +289,83 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Modal action buttons */
+.modal-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 2px solid #f7fafc;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.analyze-another-btn, .close-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.analyze-another-btn {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.analyze-another-btn:hover {
+  background: linear-gradient(135deg, #45a049, #4CAF50);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.close-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.close-btn:hover {
+  background: linear-gradient(135deg, #764ba2, #667eea);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.analyze-another-btn:active, .close-btn:active {
+  transform: translateY(0);
+}
+
+/* Mobile responsive for action buttons */
+@media (max-width: 768px) {
+  .modal-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .analyze-another-btn, .close-btn {
+    min-width: 100%;
+    padding: 14px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-actions {
+    margin-top: 20px;
+    padding-top: 15px;
+  }
+
+  .analyze-another-btn, .close-btn {
+    padding: 12px 18px;
+    font-size: 0.9rem;
+  }
 } 

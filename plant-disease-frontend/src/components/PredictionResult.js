@@ -200,7 +200,7 @@ const diseaseInfo = {
   }
 };
 
-const PredictionResult = ({ prediction }) => {
+const PredictionResult = ({ prediction, onClose, onClear }) => {
   if (!prediction) return null;
 
   const info = diseaseInfo[prediction.prediction] || {
@@ -277,6 +277,22 @@ const PredictionResult = ({ prediction }) => {
             </p>
           </div>
         )}
+
+        {/* Action buttons for modal */}
+        <div className="modal-actions">
+          <button 
+            className="analyze-another-btn"
+            onClick={onClear}
+          >
+            📷 Analyze Another Image
+          </button>
+          <button 
+            className="close-btn"
+            onClick={onClose}
+          >
+            ✓ Done
+          </button>
+        </div>
       </div>
     </div>
   );

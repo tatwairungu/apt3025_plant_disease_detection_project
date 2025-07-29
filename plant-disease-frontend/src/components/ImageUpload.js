@@ -9,6 +9,9 @@ const ImageUpload = ({ onPrediction, isLoading, setIsLoading }) => {
   const handleImageSelect = (event) => {
     const file = event.target.files[0];
     if (file) {
+      // Clear any previous prediction when new image is selected
+      onPrediction(null);
+      
       // Validate file type
       if (!file.type.startsWith('image/')) {
         setError('Please select a valid image file');

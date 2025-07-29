@@ -1,14 +1,32 @@
 import React, { useState } from 'react';
 import ImageUpload from './components/ImageUpload';
 import PredictionResult from './components/PredictionResult';
+import Modal from './components/Modal';
 import './App.css';
 
 function App() {
   const [prediction, setPrediction] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handlePrediction = (predictionData) => {
     setPrediction(predictionData);
+    if (predictionData) {
+      setIsModalOpen(true);
+      // Prevent body scroll when modal is open
+      document.body.classList.add('modal-open');
+    }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    // Re-enable body scroll when modal is closed
+    document.body.classList.remove('modal-open');
+  };
+
+  const clearPrediction = () => {
+    setPrediction(null);
+    closeModal();
   };
 
   return (
@@ -27,9 +45,15 @@ function App() {
           setIsLoading={setIsLoading}
         />
         
-        {prediction && (
-          <PredictionResult prediction={prediction} />
-        )}
+        <Modal isOpen={isModalOpen} onClose={closeModal}>
+          {prediction && (
+            <PredictionResult 
+              prediction={prediction} 
+              onClose={closeModal}
+              onClear={clearPrediction}
+            />
+          )}
+        </Modal>
       </main>
       
       <footer className="App-footer">
