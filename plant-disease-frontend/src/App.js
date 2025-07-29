@@ -59,7 +59,7 @@ function App() {
       <footer className="App-footer">
         <div className="footer-content">
           <p>© 2025 Plant Disease Detection System</p>
-          <p>Developed for APT 3025 Project | Powered by TensorFlow & React</p>
+          <p>Developed by Group 2 Apt 3025-VA | Powered by TensorFlow & React</p>
         </div>
       </footer>
     </div>
