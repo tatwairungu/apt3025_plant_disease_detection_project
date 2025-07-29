@@ -1,0 +1,26 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Model files (too large for GitHub)
+*.h5
+
+# Dataset or images (too large or already public)
+*.jpg
+*.jpeg
+*.png
+*.zip
+uploads/
+bell_pepper_healthy/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# System files
+.DS_Store
+Thumbs.db
