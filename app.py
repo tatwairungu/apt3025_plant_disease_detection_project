@@ -79,4 +79,5 @@ def predict():
 
 # Run the app
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # use Render's injected PORT
+    app.run(host="0.0.0.0", port=port)
