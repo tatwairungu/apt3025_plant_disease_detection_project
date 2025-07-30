@@ -8,7 +8,13 @@ from PIL import Image
 
 # Initialize Flask app
 app = Flask(__name__)
-CORS(app, origins=['http://localhost:3000', 'http://127.0.0.1:3000','https://6889d8f172a072616d93bbdd--scintillating-dolphin-764cf3.netlify.app'], 
+CORS(app, origins=[
+    'http://localhost:3000', 
+    'http://127.0.0.1:3000',
+    'https://6889d8f172a072616d93bbdd--scintillating-dolphin-764cf3.netlify.app',
+    'https://6889e2b--4cf3.netlify.app',
+    'https://scintillating-dolphin-764cf3.netlify.app'
+], 
      methods=['GET', 'POST'], 
      allow_headers=['Content-Type'])  # Enable CORS with specific configuration
 
